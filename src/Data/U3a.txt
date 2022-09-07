@@ -1,0 +1,6 @@
+525;Leidinys1;5
+132;BLeidinys2;0,3
+234;Leidinys3;4
+657;Leidinukas1;3
+685;Leidinukas2;4
+699;ALeidinukas3;0,7
