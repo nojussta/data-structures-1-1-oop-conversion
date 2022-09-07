@@ -1,5 +1,9 @@
+import Classes.InOutUtils;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        InOutUtils.readPublications("C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\U3a.txt");
+//        System.out.println("\n========ANTRASIS FAILAS=========\n");
+        InOutUtils.readSubscribers("C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\U3b.txt");
     }
 }
