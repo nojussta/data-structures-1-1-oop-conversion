@@ -89,4 +89,16 @@ public class LinkedList<E> implements Iterable<E> {
     public boolean Exist() {
         return current != null;
     }
+
+    public void Sort() {
+        for (Node<E> a1 = begin; a1 != null; a1 = a1.Link) {
+            for (Node<E> a2 = a1.Link; a2 != null; a2 = a2.Link) {
+                if (a1.Data.toString().compareTo(a2.Data.toString()) > 0) {
+                    E K = a1.Data;
+                    a1.Data = a2.Data;
+                    a2.Data = K;
+                }
+            }
+        }
+    }
 }
