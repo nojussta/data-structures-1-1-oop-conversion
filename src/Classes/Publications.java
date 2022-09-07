@@ -11,9 +11,9 @@ public class Publications implements Comparable<Publications> {
 
     public String Code;
     public String Title;
-    public BigDecimal Price;
+    public double Price;
 
-    public Publications(String code, String title, BigDecimal price) {
+    public Publications(String code, String title, double price) {
         Code = code;
         Title = title;
         Price = price;

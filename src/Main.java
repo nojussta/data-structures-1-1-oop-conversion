@@ -5,5 +5,6 @@ public class Main {
         InOutUtils.readPublications("C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\U3a.txt");
 //        System.out.println("\n========ANTRASIS FAILAS=========\n");
         InOutUtils.readSubscribers("C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\U3b.txt");
+//        InOutUtils.PrintMonthlyIncome();
     }
 }

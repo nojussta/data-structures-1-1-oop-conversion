@@ -5,7 +5,9 @@ import com.sun.jdi.Value;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Scanner;
 
 public class InOutUtils {
@@ -37,7 +39,7 @@ public class InOutUtils {
                 String[] Values = scanner.nextLine().split(";");
                 String Code = Values[0];
                 String Title = Values[1];
-                BigDecimal Price = BigDecimal.valueOf(Long.parseLong(Values[2].toString()));
+                Double Price = Double.parseDouble(Values[2]);
                 Publications publication = new Publications(Code, Title, Price);
                 allPublications.addE(publication);
             }
@@ -81,6 +83,15 @@ public class InOutUtils {
 
         }
         return allSubscribers;
+    }
+
+    public static void PrintMonthlyIncome(List<String> title) {
+        String dashes = new String("------------------------------------------");
+        System.out.println(dashes);
+        System.out.println(String.format("| {0, -38} | ", "Leidinių egzistencija per mėnesius"));
+        System.out.println(String.format(dashes));
+        System.out.println(String.format("| {0, -15} | {1, 20} |", "Mėnuo", "Leidinio kodas"));
+        System.out.println(String.format(dashes));
     }
 }
 
