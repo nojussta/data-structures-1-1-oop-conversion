@@ -12,8 +12,9 @@ public class TaskUtils {
 /// <param name="p"></param>
 /// <returns></returns>
     public static double CalculateValue(LinkedList<Publications> list, Subscribers publication) {
+        LinkedList.Iterator l = (LinkedList.Iterator) list.iterator();
         double value = 0;
-        for (list.Start(); list.Exist(); list.Next()) {
+        while (l.hasNext()) {
             if (Objects.equals(list.get().Code, publication.PublicationCode)) {
                 value = publication.RangeDuration * list.get().Price * publication.PublicationAmount;
             }
@@ -29,11 +30,15 @@ public class TaskUtils {
 /// <param name="list">Input of a publications linked list data</param>
 /// <returns></returns>
     public static String SearchForHighest(LinkedList<String> MonthlySubs, LinkedList<Subscribers> list1, LinkedList<Publications> list) {
+
+        LinkedList.Iterator l1 = (LinkedList.Iterator) MonthlySubs.iterator();
+        LinkedList.Iterator l2 = (LinkedList.Iterator) list1.iterator();
+
         double biggest = 0;
         String oneString = "";
-        for (MonthlySubs.Start(); MonthlySubs.Exist(); MonthlySubs.Next()) {
-            Double value = Double.valueOf(0);
-            for (list1.Start(); list1.Exist(); list1.Next()) {
+        while (l1.hasNext()) {
+            Double value = (double) 0;
+            while (l2.hasNext()) {
                 if (Objects.equals(MonthlySubs.get(), list1.get().PublicationCode)) {
                     value += CalculateValue(list, list1.get());
                 }
@@ -57,9 +62,13 @@ public class TaskUtils {
 /// <param name="list1">Input of a subscribers linked list data</param>
 /// <returns></returns>
     public static String GetHighest(int i, LinkedList<Publications> list, LinkedList<Subscribers> list1) {
+
+        LinkedList.Iterator l1 = (LinkedList.Iterator) list.iterator();
+        LinkedList.Iterator l2 = (LinkedList.Iterator) list1.iterator();
+
         LinkedList<String> monthlyPublications = new LinkedList<String>();
-        for (list.Start(); list.Exist(); list.Next()) {
-            for (list1.Start(); list1.Exist(); list1.Next()) {
+        while (l1.hasNext()) {
+            while (l2.hasNext()) {
                 if (Objects.equals(list.get().Code, list1.get().PublicationCode) && list1.get().RangeStart <= i + 1 && list1.get().RangeStart + list1.get().RangeDuration >= i + 1) {
                     String currVal = list.get().Code;
                     monthlyPublications.addE(currVal);
@@ -79,8 +88,12 @@ public class TaskUtils {
 /// <param name="Title">Input String of an object title</param>
 /// <param name="index">Input int of an index</param>
     public static void addEToList(LinkedList<Publications> list, LinkedList<Subscribers> list1, LinkedList<Subscribers> results, String Title, int index) {
-        for (list1.Start(); list1.Exist(); list1.Next()) {
-            for (list.Start(); list.Exist(); list.Next()) {
+
+        LinkedList.Iterator l1 = (LinkedList.Iterator) list.iterator();
+        LinkedList.Iterator l2 = (LinkedList.Iterator) list1.iterator();
+
+        while (l1.hasNext()) {
+            while (l2.hasNext()) {
                 if (Objects.equals(list.get().Title, Title) && Objects.equals(list.get().Code, list1.get().PublicationCode) && Contains(index, list1.get())) {
                     results.addE(list1.get());
                 }
@@ -95,7 +108,9 @@ public class TaskUtils {
 /// <returns></returns>
     public static List<String> GetList(LinkedList<Publications> list1) {
         List<String> allPublications = new ArrayList<String>();
-        for (list1.Start(); list1.Exist(); list1.Next()) {
+        LinkedList.Iterator l1 = (LinkedList.Iterator) list1.iterator();
+
+        while (l1.hasNext()) {
             if (!allPublications.contains(list1.get().Title)) {
                 allPublications.add(list1.get().Title);
             }
@@ -122,7 +137,7 @@ public class TaskUtils {
 /// <param name="list">Input of a publications linked list data</param>
 /// <param name="fileName">Input String of a file name</param>
 /// <returns></returns>
-    public static List<String> MonthlyIncomeMax(LinkedList<Subscribers> list1, LinkedList<Publications> list, String fileName) {
+    public static List<String> MonthlyIncomeMax(LinkedList<Subscribers> list1, LinkedList<Publications> list) {
         List<String> newList = new ArrayList<String>();
 
         for (int i = 0; i < 12; i++) {
@@ -140,7 +155,7 @@ public class TaskUtils {
 /// <param name="list2">Input of a subscribers linked list data</param>
 /// <param name="fileName">Input String of a file name</param>
 /// <returns></returns>
-    public static LinkedList<String> LowIncome(LinkedList<Publications> list1, LinkedList<Subscribers> list2, String fileName) {
+    public static LinkedList<String> LowIncome(LinkedList<Publications> list1, LinkedList<Subscribers> list2) {
         Double average = GetAverageIncome(list1, list2);
         List<String> Titles = GetList(list1);
         List<String> newTitles = new ArrayList<String>();
@@ -151,8 +166,8 @@ public class TaskUtils {
             }
         }
         list1.Sort();
-        InOutUtils.PrintChosenList(newTitles, list1, fileName);
-        LinkedList<String> list = InOutUtils.PrintChosenList(newTitles, list1);
+        InOutUtils.PrintChosenList(newTitles, list1);
+        LinkedList<String> list = InOutUtils.PrintChosenList2(newTitles, list1);
         return list;
     }
 
@@ -166,8 +181,11 @@ public class TaskUtils {
     public static Double GetAverage(String Title, LinkedList<Subscribers> list2, LinkedList<Publications> list1) {
         Double ave = Double.valueOf(0);
         int n = 0;
-        for (list1.Start(); list1.Exist(); list1.Next()) {
-            for (list2.Start(); list2.Exist(); list2.Next()) {
+        LinkedList.Iterator l1 = (LinkedList.Iterator) list1.iterator();
+        LinkedList.Iterator l2 = (LinkedList.Iterator) list2.iterator();
+
+        while (l1.hasNext()) {
+            while (l2.hasNext()) {
                 if (Objects.equals(list1.get().Title, Title) && Objects.equals(list1.get().Code, list2.get().PublicationCode)) {
                     ave += list1.get().Price * list2.get().PublicationAmount;
                     n++;
@@ -187,8 +205,11 @@ public class TaskUtils {
     public static Double GetAverageIncome(LinkedList<Publications> list1, LinkedList<Subscribers> list2) {
         Double sum = Double.valueOf(0);
         int allPublications = 0;
-        for (list1.Start(); list1.Exist(); list1.Next()) {
-            for (list2.Start(); list2.Exist(); list2.Next()) {
+        LinkedList.Iterator l1 = (LinkedList.Iterator) list1.iterator();
+        LinkedList.Iterator l2 = (LinkedList.Iterator) list2.iterator();
+
+        while (l1.hasNext()) {
+            while (l2.hasNext()) {
                 sum += list1.get().Price * list2.get().PublicationAmount;
                 allPublications += list2.get().PublicationAmount;
             }
@@ -206,9 +227,12 @@ public class TaskUtils {
     public static LinkedList<Double> GetIncomeSum(List<String> allPublications, LinkedList<Publications> list1, LinkedList<Subscribers> list2) {
         LinkedList<Double> sum = new LinkedList<Double>();
         Double price = (double) 0;
+        LinkedList.Iterator l1 = (LinkedList.Iterator) list1.iterator();
+        LinkedList.Iterator l2 = (LinkedList.Iterator) list2.iterator();
+
         for (int i = 0; i < allPublications.stream().count(); i++) {
-            for (list1.Start(); list1.Exist(); list1.Next()) {
-                for (list2.Start(); list2.Exist(); list2.Next()) {
+            while (l1.hasNext()) {
+                while (l2.hasNext()) {
                     if (Objects.equals(list1.get().Title, allPublications.get(i)) && Objects.equals(list2.get().PublicationCode, list1.get().Code)) {
                         price += list1.get().Price * list2.get().PublicationAmount;
                     }
@@ -241,8 +265,7 @@ public class TaskUtils {
 /// <param name="str">Input String</param>
 /// <returns></returns>
     public static boolean ContainsCharacters(String input) {
-        for(char item: input.toCharArray())
-        {
+        for (char item : input.toCharArray()) {
             if (Character.isDigit(item)) return false;
         }
         return true;
