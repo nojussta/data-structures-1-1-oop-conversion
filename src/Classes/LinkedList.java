@@ -38,16 +38,16 @@ public class LinkedList<E> implements Iterable<E> {
         }
     }
 
-    @NotNull
-    @Override
-    public Iterator<E> iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer<? super E> action) {
-        Iterable.super.forEach(action);
-    }
+//    @NotNull
+//    @Override
+//    public Iterator<E> iterator() {
+//        return null;
+//    }
+//
+//    @Override
+//    public void forEach(Consumer<? super E> action) {
+//        Iterable.super.forEach(action);
+//    }
 
     private Node<E> begin;
     private Node<E> end;
@@ -99,6 +99,45 @@ public class LinkedList<E> implements Iterable<E> {
                     a2.Data = K;
                 }
             }
+        }
+    }
+
+    public int Count() {
+        Node<E> temp = begin;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.Link;
+        }
+        return count;
+    }
+
+    @Override
+    public java.util.Iterator<E> iterator() {
+        return new Iterator();
+    }
+
+    /**
+     * Iteratoriaus metodų klasė
+     */
+    class Iterator implements java.util.Iterator<E> {
+
+        private Node<E> iterPosition;
+
+        Iterator() {
+            iterPosition = begin;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return iterPosition != null;
+        }
+
+        @Override
+        public E next() {
+            E d = iterPosition.Data;
+            iterPosition = iterPosition.Link;
+            return d;
         }
     }
 }

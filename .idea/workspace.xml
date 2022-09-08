@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/publications-subscribers-classes-read-method-update">
+    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/InOutUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/InOutUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Publications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Publications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/TaskUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -85,7 +84,8 @@
       <workItem from="1662483912338" duration="5596000" />
       <workItem from="1662538730220" duration="4566000" />
       <workItem from="1662552937461" duration="912000" />
-      <workItem from="1662562254118" duration="5211000" />
+      <workItem from="1662562254118" duration="5839000" />
+      <workItem from="1662625804441" duration="7169000" />
     </task>
     <task id="LOCAL−00001" summary="add/publications-class">
       <created>1662476685846</created>
@@ -99,7 +99,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1662542125040</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="add/converting-c#">
+      <created>1662572247507</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1662572247507</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,9 +126,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add/publications-class" />
     <MESSAGE value="add/publications-subscribers-classes-read-method-update" />
-    <option name="LAST_COMMIT_MESSAGE" value="add/publications-subscribers-classes-read-method-update" />
+    <MESSAGE value="add/converting-c#" />
+    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="allPublications.end" />
