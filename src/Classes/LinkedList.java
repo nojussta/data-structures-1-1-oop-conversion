@@ -66,7 +66,7 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     public E get() {
-        return this.current.Data;
+        return current.Data;
     }
 
 //    public E get(int k) {
