@@ -6,55 +6,6 @@ public class Subscribers {
     public int RangeStart;
     public int RangeDuration;
     public String PublicationCode;
-
-    public String getSurname() {
-        return Surname;
-    }
-
-    public void setSurname(String surname) {
-        Surname = surname;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }
-
-    public int getRangeStart() {
-        return RangeStart;
-    }
-
-    public void setRangeStart(int rangeStart) {
-        RangeStart = rangeStart;
-    }
-
-    public int getRangeDuration() {
-        return RangeDuration;
-    }
-
-    public void setRangeDuration(int rangeDuration) {
-        RangeDuration = rangeDuration;
-    }
-
-    public String getPublicationCode() {
-        return PublicationCode;
-    }
-
-    public void setPublicationCode(String publicationCode) {
-        PublicationCode = publicationCode;
-    }
-
-    public int getPublicationAmount() {
-        return PublicationAmount;
-    }
-
-    public void setPublicationAmount(int publicationAmount) {
-        PublicationAmount = publicationAmount;
-    }
-
     public int PublicationAmount;
 
     public Subscribers(String surname, String address, int rangeStart, int rangeDuration, String publicationCode, int publicationAmount) {
