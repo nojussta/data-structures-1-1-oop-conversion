@@ -27,7 +27,7 @@ public class InOutUtils {
                 String Title = Values[1];
                 Double Price = Double.parseDouble(Values[2]);
                 Publications publication = new Publications(Code, Title, Price);
-                allPublications.addE(publication);
+                allPublications.addF(publication);
             }
         } catch (Exception ex) {
 
@@ -51,7 +51,7 @@ public class InOutUtils {
                 String PublicationCode = Values[4];
                 Integer PublicationAmount = Integer.parseInt(Values[5]);
                 Subscribers subscriber = new Subscribers(Surname, Address, RangeStart, RangeDuration, PublicationCode, PublicationAmount);
-                allSubscribers.addE(subscriber);
+                allSubscribers.addF(subscriber);
             }
         } catch (Exception ex) {
 
@@ -69,6 +69,7 @@ public class InOutUtils {
         for (int i = 0; i < 12; i++) {
             System.out.println(String.format("| %15s | %20s |", new DateFormatSymbols().getMonths()[i], title.get(i)));
         }
+        System.out.println(String.format(dashes) + "\n");
     }
 
     public static void PrintSummedIncome(LinkedList<Double> incomeSum, LinkedList<Publications> list) {
@@ -85,12 +86,13 @@ public class InOutUtils {
         System.out.println(String.format(dashes));
         for (int i = 0; i < names.stream().count(); i++) {
             int n = 0;
-            while (l.hasNext()) {
+            for (incomeSum.Start(); incomeSum.Exist(); incomeSum.Next()) {
                 if (n == i)
-                    System.out.println(String.format("| %35s | %8s |", names.get(i), incomeSum.get()));
+                    System.out.println(String.format("| %35s | %8d |", names.get(i), Math.round(incomeSum.get())));
                 n++;
             }
         }
+        System.out.println(String.format(dashes) + "\n");
     }
 
     public static void PrintChosenList(List<String> titles, LinkedList<Publications> list) {
@@ -98,24 +100,23 @@ public class InOutUtils {
         LinkedList.Iterator l = (LinkedList.Iterator) list.iterator();
 
         if (list.Count() > 0) {
-            String dashes = new String("---------------------------------------------------------------------");
+            String dashes = new String("----------------------------------------------------------------------");
             System.out.println(String.format(dashes));
-            System.out.println(String.format("%45s", "Duomenys tenkinantys kriterijus"));
+            System.out.println(String.format("| %66s |", "Duomenys tenkinantys kriterijus"));
             System.out.println(String.format(dashes));
             System.out.println(String.format("| %25s | %20s | %15s |", "Leidinio kodas", "Leidinio pavadinimas", "Kaina"));
             System.out.println(String.format(dashes));
             for (int i = 0; i < titles.stream().count(); i++) {
-                while (l.hasNext()) {
+                for (list.Start(); list.Exist(); list.Next()) {
                     if (list.get().Title == titles.get(i)) {
-                        System.out.println(String.format("| %25s | %20s | %15s |",
-                                list.get().Code, list.get().Title, list.get().Price));
+                        System.out.println(String.format("| %25s | %20s | %15s |", list.get().Code, list.get().Title, list.get().Price));
                     }
                 }
             }
-            System.out.println();
+            System.out.println(String.format(dashes) + "\n");
         } else {
             System.out.println();
-            System.out.println(String.format("{0,35}     ", "Sąlygą tenkinančių duomenų nėra!"));
+            System.out.println(String.format("s%35s", "Sąlygą tenkinančių duomenų nėra!"));
         }
     }
 
@@ -123,15 +124,34 @@ public class InOutUtils {
         LinkedList.Iterator l = (LinkedList.Iterator) list.iterator();
         LinkedList<String> newStringList = new LinkedList<String>();
         for (int i = 0; i < titles.stream().count(); i++) {
-            while (l.hasNext()) {
+            for (list.Start(); list.Exist(); list.Next()) {
                 if (list.get().Title == titles.get(i)) {
                     String tempLine = "";
-                    tempLine += String.format("| {0, -25} | {1, 20} | {2, 15}|", list.get().Code, list.get().Title, list.get().Price) + "\n";
-                    newStringList.addE(tempLine);
+                    tempLine += String.format("| %25s | %20s | %15s |", list.get().Code, list.get().Title, list.get().Price) + "\n";
+                    newStringList.addF(tempLine);
                 }
             }
         }
         return newStringList;
+    }
+
+    public static void PrintResults(LinkedList<Subscribers> list) {
+        String dashes = new String("-------------------------------------------------------");
+        if (list.Count() > 0) {
+            System.out.println("\n" + dashes);
+            System.out.println(String.format("| %51s |", "Sąlygą tenkinantys duomenys atrinkti!"));
+            System.out.println(dashes);
+            System.out.println(String.format("| %5s | %20s | %20s |", "Kodas", "Pavardė", "Adresas"));
+            System.out.println(dashes);
+            for (list.Start(); list.Exist(); list.Next()) {
+                System.out.println(String.format("| %5s | %20s | %20s |", list.get().PublicationCode, list.get().Surname, list.get().Address));
+            }
+            System.out.println(String.format(dashes) + "\n");
+        } else {
+            System.out.println(dashes);
+            System.out.println(String.format("Sąlygą tenkinančių duomenų nėra!"));
+            System.out.println(String.format(dashes) + "\n");
+        }
     }
 }
 

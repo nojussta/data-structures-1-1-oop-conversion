@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#-v2">
+    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#-v3-update-linkedlist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/InOutUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/InOutUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/TaskUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/U3a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/U3a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +72,11 @@
       <recent name="Classes" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="git" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -99,7 +105,8 @@
       <workItem from="1662552937461" duration="912000" />
       <workItem from="1662562254118" duration="5839000" />
       <workItem from="1662625804441" duration="7314000" />
-      <workItem from="1662892956176" duration="2216000" />
+      <workItem from="1662892956176" duration="6970000" />
+      <workItem from="1662920766112" duration="1505000" />
     </task>
     <task id="LOCAL−00001" summary="add/publications-class">
       <created>1662476685846</created>
@@ -125,7 +132,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1662634590992</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="add/converting-c#-v3-update-linkedlist">
+      <created>1662895433276</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1662895433276</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,22 +161,7 @@
     <MESSAGE value="add/publications-subscribers-classes-read-method-update" />
     <MESSAGE value="add/converting-c#" />
     <MESSAGE value="add/converting-c#-v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#-v2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="allPublications.end" />
-        <watch expression="allPublications.end" />
-      </configuration>
-    </watches-manager>
+    <MESSAGE value="add/converting-c#-v3-update-linkedlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#-v3-update-linkedlist" />
   </component>
 </project>

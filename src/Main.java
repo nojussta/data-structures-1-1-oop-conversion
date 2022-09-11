@@ -21,9 +21,10 @@ public class Main {
 
         LinkedList<Subscribers> resultList = new LinkedList<Subscribers>();
         TaskUtils.addEToList(list1, list2, resultList, SearchedPublications, SearchedMonth);
+        InOutUtils.PrintResults(resultList);
 
-        List<String> firstList = TaskUtils.MonthlyIncomeMax(list2, list1);
-        InOutUtils.PrintMonthlyIncome(firstList);
+        List<String> monthlyIncomeList = TaskUtils.MonthlyIncomeMax(list2, list1);
+        InOutUtils.PrintMonthlyIncome(monthlyIncomeList);
 
         LinkedList<Double> Sum = TaskUtils.IncomeSum(list1, list2);
         InOutUtils.PrintSummedIncome(Sum, list1);
