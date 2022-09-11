@@ -1,15 +1,8 @@
 package Classes;
 
-import com.sun.jdi.Value;
-
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.math.BigDecimal;
 import java.text.DateFormatSymbols;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class InOutUtils {
