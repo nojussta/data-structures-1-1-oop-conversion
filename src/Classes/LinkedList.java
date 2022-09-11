@@ -1,42 +1,30 @@
 package Classes;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Iterator;
-import java.util.function.Consumer;
-
 public class LinkedList<E> implements Iterable<E> {
-    public class Node<E> implements Comparable<E> {
-        public E Data;
+    private static class Node<E> {
 
-        public E getData() {
-            return Data;
+        private E Data;    // ji nematoma už klasės ListKTU ribų
+        private Node<E> Link; // next - kaip įprasta - nuoroda į kitą mazgą
+
+        Node(E data, Node<E> link) { //mazgo konstruktorius
+            this.Data = data;
+            this.Link = link;
         }
 
-        public void setData(E data) {
-            Data = data;
+        /**
+         * Suranda sąraše k-ąjį mazgą
+         *
+         * @param k ieškomo mazgo indeksas (prasideda nuo 0)
+         * @return surastas mazgas
+         */
+        public Node<E> findNode(int k) {
+            Node<E> e = this;
+            for (int i = 0; i < k; i++) {
+                e = e.Link;
+            }
+            return e;
         }
-
-        public Node<E> getLink() {
-            return Link;
-        }
-
-        public void setLink(Node<E> link) {
-            Link = link;
-        }
-
-        public Node<E> Link;
-
-        public Node(E value, Node<E> address) {
-            Data = value;
-            Link = address;
-        }
-
-        @Override
-        public int compareTo(@NotNull E o) {
-            return 0;
-        }
-    }
+    } // klasės Node pabaiga
 
 //    @NotNull
 //    @Override
@@ -52,31 +40,42 @@ public class LinkedList<E> implements Iterable<E> {
     private Node<E> begin;
     private Node<E> end;
     private Node<E> current;
+    private int size;
 
     public LinkedList() {
-        begin = null;
-        end = null;
-        current = null;
     }
 
     public void addF(E item) {
         begin = new Node<E>(item, begin);
     }
 
-    public void addE(E item) {
-        var temp = new Node<E>(item, null);
-        if (begin != null) {
-            end.Link = temp;
-            end = temp;
-        } else {
-            begin = temp;
-            end = temp;
+    public boolean addE(E e) {
+        if (e == null) {
+            return false;   // nuliniai objektai nepriimami
         }
+        if (begin == null) {
+            begin = new Node<>(e, begin);
+            end = begin;
+        } else {
+            Node<E> e1 = new Node(e, null);
+            begin.Link = e1;
+            begin = e1;
+        }
+        size++;
+        return true;
     }
 
     public E get() {
-        return current.Data;
+        return this.current.Data;
     }
+
+//    public E get(int k) {
+//        if (k < 0 || k >= size) {
+//            return null;
+//        }
+//        current = begin.findNode(k);
+//        return current.Data;
+//    }
 
     public void Start() {
         current = begin;
