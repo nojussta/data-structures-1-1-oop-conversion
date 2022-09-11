@@ -1,7 +1,5 @@
 package Classes;
 
-import java.math.BigDecimal;
-
 public class Publications implements Comparable<Publications> {
 
     @Override
