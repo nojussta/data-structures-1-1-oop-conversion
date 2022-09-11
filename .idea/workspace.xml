@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#-v8-update-main-taskutils">
+    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#-v9-update-linkedlist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/LinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <workItem from="1662562254118" duration="5839000" />
       <workItem from="1662625804441" duration="7314000" />
       <workItem from="1662892956176" duration="6970000" />
-      <workItem from="1662920766112" duration="3822000" />
+      <workItem from="1662920766112" duration="4458000" />
     </task>
     <task id="LOCAL−00001" summary="add/publications-class">
       <created>1662476685846</created>
@@ -165,7 +164,13 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1662924393765</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="add/converting-c#-v9-update-linkedlist">
+      <created>1662924636249</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1662924636249</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +199,7 @@
     <MESSAGE value="add/converting-c#-v6-update-linkedlist" />
     <MESSAGE value="add/converting-c#-v7-update-data-classes" />
     <MESSAGE value="add/converting-c#-v8-update-main-taskutils" />
-    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#-v8-update-main-taskutils" />
+    <MESSAGE value="add/converting-c#-v9-update-linkedlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#-v9-update-linkedlist" />
   </component>
 </project>
