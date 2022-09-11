@@ -2,40 +2,14 @@ package Classes;
 
 public class LinkedList<E> implements Iterable<E> {
     private static class Node<E> {
+        private E Data;
+        private Node<E> Link;
 
-        private E Data;    // ji nematoma už klasės ListKTU ribų
-        private Node<E> Link; // next - kaip įprasta - nuoroda į kitą mazgą
-
-        Node(E data, Node<E> link) { //mazgo konstruktorius
+        Node(E data, Node<E> link) {
             this.Data = data;
             this.Link = link;
         }
-
-        /**
-         * Suranda sąraše k-ąjį mazgą
-         *
-         * @param k ieškomo mazgo indeksas (prasideda nuo 0)
-         * @return surastas mazgas
-         */
-        public Node<E> findNode(int k) {
-            Node<E> e = this;
-            for (int i = 0; i < k; i++) {
-                e = e.Link;
-            }
-            return e;
-        }
-    } // klasės Node pabaiga
-
-//    @NotNull
-//    @Override
-//    public Iterator<E> iterator() {
-//        return null;
-//    }
-//
-//    @Override
-//    public void forEach(Consumer<? super E> action) {
-//        Iterable.super.forEach(action);
-//    }
+    }
 
     private Node<E> begin;
     private Node<E> end;
@@ -51,7 +25,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     public boolean addE(E e) {
         if (e == null) {
-            return false;   // nuliniai objektai nepriimami
+            return false;
         }
         if (begin == null) {
             begin = new Node<>(e, begin);
@@ -68,14 +42,6 @@ public class LinkedList<E> implements Iterable<E> {
     public E get() {
         return current.Data;
     }
-
-//    public E get(int k) {
-//        if (k < 0 || k >= size) {
-//            return null;
-//        }
-//        current = begin.findNode(k);
-//        return current.Data;
-//    }
 
     public void Start() {
         current = begin;
@@ -115,10 +81,6 @@ public class LinkedList<E> implements Iterable<E> {
     public java.util.Iterator<E> iterator() {
         return new Iterator();
     }
-
-    /**
-     * Iteratoriaus metodų klasė
-     */
     class Iterator implements java.util.Iterator<E> {
 
         private Node<E> iterPosition;
