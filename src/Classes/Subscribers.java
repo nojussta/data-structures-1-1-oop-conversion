@@ -1,12 +1,12 @@
 package Classes;
 
 public class Subscribers {
-    public String Surname;
-    public String Address;
-    public int RangeStart;
-    public int RangeDuration;
-    public String PublicationCode;
-    public int PublicationAmount;
+    String Surname;
+    String Address;
+    int RangeStart;
+    int RangeDuration;
+    String PublicationCode;
+    int PublicationAmount;
 
     public Subscribers(String surname, String address, int rangeStart, int rangeDuration, String publicationCode, int publicationAmount) {
         this.Surname = surname;
@@ -19,7 +19,7 @@ public class Subscribers {
 
     @Override
     public String toString() {
-        return String.format("| {0, 8} | {1, -15} | {2, -20} | {3, 5} | {4, 5} | {5, 5} |", PublicationCode, Surname, Address, RangeStart, RangeDuration, PublicationAmount);
+        return String.format("| %8s | %15s | %20d | %5d | %5s | %5d |", PublicationCode, Surname, Address, RangeStart, RangeDuration, PublicationAmount);
     }
 
     public boolean equals(Subscribers other) {
