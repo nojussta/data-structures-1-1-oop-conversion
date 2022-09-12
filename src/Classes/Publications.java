@@ -7,9 +7,9 @@ public class Publications implements Comparable<Publications> {
         return 0;
     }
 
-    public String Code;
-    public String Title;
-    public double Price;
+    String Code;
+    String Title;
+    double Price;
 
     public Publications(String code, String title, double price) {
         Code = code;
@@ -19,7 +19,7 @@ public class Publications implements Comparable<Publications> {
 
     @Override
     public String toString() {
-        return String.format("| {0, 8} | {1, -15} | {2, 10} |", Code, Title, Price);
+        return String.format("| %8s | %15s | %10d |", Code, Title, Price);
     }
 
     public boolean equals(Publications other) {
