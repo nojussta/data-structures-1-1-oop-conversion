@@ -140,7 +140,7 @@ public class TaskUtils {
 /// <param name="list2">Input of a subscribers linked list data</param>
 /// <param name="fileName">Input String of a file name</param>
 /// <returns></returns>
-    public static LinkedList<String> LowIncome(LinkedList<Publications> list1, LinkedList<Subscribers> list2) {
+    public static LinkedList<String> LowIncome(LinkedList<Publications> list1, LinkedList<Subscribers> list2, String fileName) {
         Double average = GetAverageIncome(list1, list2);
         List<String> Titles = GetList(list1);
         List<String> newTitles = new ArrayList<String>();
@@ -151,7 +151,8 @@ public class TaskUtils {
             }
         }
         list1.Sort();
-        InOutUtils.PrintChosenList(newTitles, list1);
+        InOutUtils.PrintChosenList1(newTitles, list1);
+        InOutUtils.PrintChosenList1ToFile(newTitles, list1, fileName);
         LinkedList<String> list = InOutUtils.PrintChosenList2(newTitles, list1);
         return list;
     }
