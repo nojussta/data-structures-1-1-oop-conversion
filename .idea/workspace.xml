@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#-v10">
+    <list default="true" id="30e219be-a0be-4def-a67c-94e9cecd0be1" name="Changes" comment="add/converting-c#-v10-obj-class-update">
+      <change afterPath="$PROJECT_DIR$/src/Data/Rezultatai.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/InOutUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/InOutUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/Publications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Publications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Subscribers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Subscribers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/TaskUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +109,7 @@
       <workItem from="1662892956176" duration="6970000" />
       <workItem from="1662920766112" duration="5086000" />
       <workItem from="1662970768516" duration="117000" />
-      <workItem from="1662970919409" duration="855000" />
+      <workItem from="1662970919409" duration="4889000" />
     </task>
     <task id="LOCAL−00001" summary="add/publications-class">
       <created>1662476685846</created>
@@ -180,7 +183,13 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1662925297085</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="add/converting-c#-v10-obj-class-update">
+      <created>1662982002038</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1662982002038</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +220,7 @@
     <MESSAGE value="add/converting-c#-v8-update-main-taskutils" />
     <MESSAGE value="add/converting-c#-v9-update-linkedlist" />
     <MESSAGE value="add/converting-c#-v10" />
-    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#-v10" />
+    <MESSAGE value="add/converting-c#-v10-obj-class-update" />
+    <option name="LAST_COMMIT_MESSAGE" value="add/converting-c#-v10-obj-class-update" />
   </component>
 </project>

@@ -1,6 +1,9 @@
 package Classes;
 
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormatSymbols;
 import java.util.List;
 import java.util.Scanner;
@@ -88,7 +91,7 @@ public class InOutUtils {
         System.out.println(String.format(dashes) + "\n");
     }
 
-    public static void PrintChosenList(List<String> titles, LinkedList<Publications> list) {
+    public static void PrintChosenList1(List<String> titles, LinkedList<Publications> list) {
 
         LinkedList.Iterator l = (LinkedList.Iterator) list.iterator();
 
@@ -144,6 +147,102 @@ public class InOutUtils {
             System.out.println(dashes);
             System.out.println(String.format("Sąlygą tenkinančių duomenų nėra!"));
             System.out.println(String.format(dashes) + "\n");
+        }
+    }
+
+    public static void PrintMonthlyIncomeToFile(List<String> title, String fileName) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            String dashes = String.format("------------------------------------------") + "\n";
+            writer.append(dashes);
+            writer.append(String.format("| %38s | ", "Leidinių egzistencija per mėnesius"));
+            writer.newLine();
+            writer.append(String.format(dashes));
+            writer.append(String.format("| %15s | %20s |", "Mėnuo", "Leidinio kodas") + "\n");
+            writer.append(String.format(dashes));
+            for (int i = 0; i < 12; i++) {
+                writer.append(String.format("| %15s | %20s |", new DateFormatSymbols().getMonths()[i], title.get(i)) + "\n");
+            }
+            writer.append(String.format(dashes) + "\n");
+            writer.close();
+        } catch (Exception ex) {
+        }
+    }
+
+    public static void PrintSummedIncomeToFile(LinkedList<Double> incomeSum, LinkedList<Publications> list, String fileName) {
+
+        List<String> names = TaskUtils.GetList(list);
+        list.Sort();
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            String dashes = String.format("--------------------------------------------------") + "\n";
+            writer.write(String.format(dashes));
+            writer.append(String.format("| %46s | ", "Leidinių uždarbiai") + "\n");
+            writer.append(String.format(dashes));
+            writer.append(String.format("| %35s | %8s |", "Leidinio pavadinimas", "Uždarbis") + "\n");
+            writer.append(String.format(dashes));
+            for (int i = 0; i < names.stream().count(); i++) {
+                int n = 0;
+                for (incomeSum.Start(); incomeSum.Exist(); incomeSum.Next()) {
+                    if (n == i)
+                        writer.append(String.format("| %35s | %8d |", names.get(i), Math.round(incomeSum.get())) + "\n");
+                    n++;
+                }
+            }
+            writer.append(String.format(dashes) + "\n");
+            writer.close();
+        } catch (Exception ex) {
+        }
+    }
+
+    public static void PrintChosenList1ToFile(List<String> titles, LinkedList<Publications> list, String fileName) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            if (list.Count() > 0) {
+                String dashes = String.format("----------------------------------------------------------------------") + "\n";
+                writer.append(String.format(dashes));
+                writer.append(String.format("| %66s |", "Duomenys tenkinantys kriterijus") + "\n");
+                writer.append(String.format(dashes));
+                writer.append(String.format("| %25s | %20s | %15s |", "Leidinio kodas", "Leidinio pavadinimas", "Kaina") + "\n");
+                writer.append(String.format(dashes));
+                for (int i = 0; i < titles.stream().count(); i++) {
+                    for (list.Start(); list.Exist(); list.Next()) {
+                        if (list.get().Title == titles.get(i)) {
+                            writer.append(String.format("| %25s | %20s | %15s |", list.get().Code, list.get().Title, list.get().Price) + "\n");
+                        }
+                    }
+                }
+                writer.append(String.format(dashes) + "\n");
+            } else {
+                writer.append(String.format("%35s", "Sąlygą tenkinančių duomenų nėra!"));
+            }
+            writer.close();
+        } catch (Exception ex) {
+
+        }
+    }
+
+    public static void PrintResultsToFile(LinkedList<Subscribers> list, String fileName) {
+        String dashes = String.format("-------------------------------------------------------") + "\n";
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            if (list.Count() > 0) {
+                writer.append("\n" + dashes);
+                writer.append(String.format("| %51s |", "Sąlygą tenkinantys duomenys atrinkti!") + "\n");
+                writer.append(dashes);
+                writer.append(String.format("| %5s | %20s | %20s |", "Kodas", "Pavardė", "Adresas") + "\n");
+                writer.append(dashes);
+                for (list.Start(); list.Exist(); list.Next()) {
+                    writer.append(String.format("| %5s | %20s | %20s |", list.get().PublicationCode, list.get().Surname, list.get().Address) + "\n");
+                }
+                writer.append(String.format(dashes));
+            } else {
+                writer.append(dashes);
+                writer.append(String.format("Sąlygą tenkinančių duomenų nėra!") + "\n");
+                writer.append(String.format(dashes));
+            }
+        } catch (Exception ex) {
+
         }
     }
 }
