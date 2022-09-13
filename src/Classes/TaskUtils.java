@@ -3,6 +3,7 @@ package Classes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Filter;
 
 public class TaskUtils {
     /// <summary>
@@ -133,6 +134,21 @@ public class TaskUtils {
         return newList;
     }
 
+    public static LinkedList<String> FilterChosenList(List<String> titles, LinkedList<Publications> list) {
+        LinkedList.Iterator l = (LinkedList.Iterator) list.iterator();
+        LinkedList<String> newStringList = new LinkedList<String>();
+        for (int i = 0; i < titles.stream().count(); i++) {
+            for (list.Start(); list.Exist(); list.Next()) {
+                if (list.get().Title == titles.get(i)) {
+                    String tempLine = "";
+                    tempLine += String.format("| %25s | %20s | %15s |", list.get().Code, list.get().Title, list.get().Price) + "\n";
+                    newStringList.addF(tempLine);
+                }
+            }
+        }
+        return newStringList;
+    }
+
     /// <summary>
 /// This method calculates the lowest income per month
 /// </summary>
@@ -153,7 +169,7 @@ public class TaskUtils {
         list1.Sort();
         InOutUtils.PrintChosenList1(newTitles, list1);
         InOutUtils.PrintChosenList1ToFile(newTitles, list1, fileName);
-        LinkedList<String> list = InOutUtils.PrintChosenList2(newTitles, list1);
+        LinkedList<String> list = FilterChosenList(newTitles, list1);
         return list;
     }
 
@@ -242,8 +258,7 @@ public class TaskUtils {
 /// <param name="str">Input String</param>
 /// <returns></returns>
     public static boolean ContainsCharacters(String input) {
-        for(char item: input.toCharArray())
-        {
+        for (char item : input.toCharArray()) {
             if (Character.isDigit(item)) return false;
         }
         return true;
