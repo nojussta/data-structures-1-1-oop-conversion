@@ -81,6 +81,7 @@ public class LinkedList<E> implements Iterable<E> {
     public java.util.Iterator<E> iterator() {
         return new Iterator();
     }
+
     class Iterator implements java.util.Iterator<E> {
 
         private Node<E> iterPosition;

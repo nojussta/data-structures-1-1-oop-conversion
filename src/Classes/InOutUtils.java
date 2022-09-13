@@ -116,21 +116,6 @@ public class InOutUtils {
         }
     }
 
-    public static LinkedList<String> PrintChosenList2(List<String> titles, LinkedList<Publications> list) {
-        LinkedList.Iterator l = (LinkedList.Iterator) list.iterator();
-        LinkedList<String> newStringList = new LinkedList<String>();
-        for (int i = 0; i < titles.stream().count(); i++) {
-            for (list.Start(); list.Exist(); list.Next()) {
-                if (list.get().Title == titles.get(i)) {
-                    String tempLine = "";
-                    tempLine += String.format("| %25s | %20s | %15s |", list.get().Code, list.get().Title, list.get().Price) + "\n";
-                    newStringList.addF(tempLine);
-                }
-            }
-        }
-        return newStringList;
-    }
-
     public static void PrintResults(LinkedList<Subscribers> list) {
         String dashes = new String("-------------------------------------------------------");
         if (list.Count() > 0) {

@@ -9,7 +9,7 @@ public class Main {
 //
 //
 //        LinkedList<Subscribers> list2 = new LinkedList<Subscribers>();
-        
+
         String CFd1 = "C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\U3a.txt";
         String CFd2 = "C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\U3b.txt";
         String CFr = "C:\\Users\\Lenovo\\IdeaProjects\\data-structures-2\\src\\Data\\Rezultatai.txt";
